@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Math</title>
+    <link rel="icon" href="{{ url_for('static', filename='./img/favicon.png')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css')}}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/animate.css')}}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/owl.carousel.min.css')}}">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/themify-icons.css')}}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/flaticon.css')}}">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/magnific-popup.css')}}">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/slick.css')}}">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css')}}">
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu single_page_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand logo_1" href="index.html"> <img
+                                src="{{ url_for('static', filename='img/single_page_logo.png')}}" style="width: 130px;"
+                                alt="logo"> </a>
+                        <a class="navbar-brand logo_2" href="index.html"> <img
+                                src="{{ url_for('static', filename='img/logo.png')}}" style="width: 130px;" alt="logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('home',ids=ids)}}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('about',ids=ids)}}">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger" href="{{url_for('course',ids=ids)}}">Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('my_courses',ids=ids)}}">My Courses</a>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    {% if ids %}
+                                    <a class="btn_1" href="{{url_for('logout',ids=ids)}}">Logout</a>
+                                    {% else %}
+                                    <a class="btn_1" href="/sign_in">Sign in</a>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Course Details</h2>
+                            <p>Home<span>/</span>Course Details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!--================ Start Course Details Area =================-->
+    <section class="course_details_area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 course_details_left">
+                    <div class="main_image">
+                        <img class="img-fluid" src="/static/img/single_cource.png" alt="">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 right-contents">
+                    <div class="sidebar_top">
+                        <ul>
+                            <li>
+                                <a class="justify-content-between d-flex">
+                                    <p>Teacher Name</p>
+                                    <span class="color">Prof. Mahendra More,<br>Prof. Tushar Parve</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="justify-content-between d-flex">
+                                    <p>Course Fee </p>
+                                    <span id="course_fee"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="justify-content-between d-flex">
+                                    <p>Number Of Videos </p>
+                                    <span id="no_of_videos"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="justify-content-between d-flex">
+                                    <p>Cource Duration </p>
+                                    <span id="course_duration"></span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content_wrapper">
+                        <h4 class="title">Course Outline</h4>
+                        <div class="content">
+                            <ul class="course_list" id="course_list">
+    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <!--================ End Course Details Area =================-->
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <div class="single-footer-widget footer_1">
+                        <a href="index.html"> <img src="img/logo.png" style="width: 180px;" alt=""> </a>
+                        <p>But when shot real her. Chamber her one visite removal six
+                            sending himself boys scot exquisite existend an </p>
+                        <p>But when shot real her hamber her </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-4">
+                    <div class="single-footer-widget footer_2">
+                        <h4>Newsletter</h4>
+                        <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
+                        </p>
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Enter email address'
+                                        onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email address'">
+                                    <div class="input-group-append">
+                                        <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="social_icon">
+                            <a href="#"> <i class="ti-facebook"></i> </a>
+                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                            <a href="#"> <i class="ti-instagram"></i> </a>
+                            <a href="#"> <i class="ti-skype"></i> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-md-4">
+                    <div class="single-footer-widget footer_2">
+                        <h4>Contact us</h4>
+                        <div class="contact_info">
+                            <p><span> Address :</span> Hath of it fly signs bear be one blessed after </p>
+                            <p><span> Phone :</span> +2 36 265 (8060)</p>
+                            <p><span> Email : </span>info@colorlib.com </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="{{ url_for('static', filename='./js/jquery-1.12.1.min.js')}}"></script>
+    <!-- popper js -->
+    <script src="{{ url_for('static', filename='./js/popper.min.js')}}"></script>
+    <!-- bootstrap js -->
+    <script src="{{ url_for('static', filename='/js/bootstrap.min.js')}}"></script>
+    <!-- easing js -->
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js')}}"></script>
+    <!-- swiper js -->
+    <script src="{{ url_for('static', filename='js/swiper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.nice-select.min.js')}}"></script>
+    <!-- swiper js -->
+    <script src="{{ url_for('static', filename='js/masonry.pkgd.js')}}"></script>
+    <!-- particles js -->
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <!-- contact js -->
+    <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.form.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.validate.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/mail-script.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/contact.js')}}"></script>
+
+    <!-- slick js -->
+    <script src="{{ url_for('static', filename='js/slick.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+    <!-- custom js -->
+    <script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        console.log(location.protocol + '//' + location.host + location.pathname + '/courses_details_data' + window.location.search, "################")
+        fetch(location.protocol + '//' + location.host + location.pathname + '/courses_details_data' + window.location.search, {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify()
+        })
+            .then(response => response.json())
+            .then(function (data) {
+                xyz(data)
+            });
+    })
+
+    function xyz(data) {
+        console.log(data["courses"]["links"])
+        if(data["courses"] != 0){
+            number_of_videos = Object.keys(data["courses"]["links"]).length;
+            duration = number_of_videos*1.5
+            fees = data["courses"]["price"]
+            str = ""
+            for(key in data["courses"]["links"]){
+                str += '<li class="justify-content-between align-items-center d-flex">\
+                                    <p class="text-primary">'+key+'</p>\
+                                </li><hr>'
+            }
+            document.getElementById("course_list").innerHTML = str
+            document.getElementById("no_of_videos").innerText = number_of_videos
+            document.getElementById("course_duration").innerText = duration
+            document.getElementById("course_fee").innerText = fees
+        }else{
+            alert("zero got")
+        }
+    }
+
+</script>

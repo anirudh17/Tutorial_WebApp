@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Math</title>
+    <link rel="icon" href="{{ url_for('static', filename='./img/favicon.png')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css')}}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/animate.css')}}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/owl.carousel.min.css')}}">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/themify-icons.css')}}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/flaticon.css')}}">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/magnific-popup.css')}}">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/slick.css')}}">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css')}}">
+    <script src="https://www.youtube.com/player_api"></script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu single_page_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand logo_1" href="index.html"> <img
+                                src="{{ url_for('static', filename='img/single_page_logo.png')}}" style="width: 130px;"
+                                alt="logo"> </a>
+                        <a class="navbar-brand logo_2" href="index.html"> <img
+                                src="{{ url_for('static', filename='img/logo.png')}}" style="width: 130px;" alt="logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('home',ids=ids)}}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('about',ids=ids)}}">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('course',ids=ids)}}">Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-danger" href="{{url_for('my_courses',ids=ids)}}">My
+                                        Courses</a>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    {% if ids %}
+                                    <a class="btn_1" href="{{url_for('logout',ids=ids)}}">Logout</a>
+                                    {% else %}
+                                    <a class="btn_1" href="/sign_in">Sign in</a>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Tutorials</h2>
+                            <p>Home<span>/</span>Tutorials</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="special_cource padding_top">
+        <div class="container" id="course">
+            
+        </div>
+    </section>
+
+    <div class="modal fade" id="modal1" tabindex="-1" style="z-index:10000;" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+            <!--Content-->
+            <div class="modal-content">
+                <!--Body-->
+                <div class="modal-body mb-0 p-1">
+
+                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                        <div id="YouTube-player" class="embed-responsive-item" allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <span class="mr-4">Spread the word!</span>
+                        <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
+                        <!--Twitter-->
+                        <a type="button" class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter"></i></a>
+                        <!--Google +-->
+                        <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
+                        <!--Linkedin-->
+                        <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
+
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                            onclick="youTubePlayer.stopVideo()" data-dismiss="modal">Close</button>
+
+                    </div>
+
+                </div>
+                <!--/.Content-->
+
+            </div>
+        </div>
+    </div>
+    <!-- learning part end-->
+
+    <!-- member_counter counter start -->
+    <!-- member_counter counter end -->
+
+    <!--::review_part start::-->
+
+    <!--::blog_part end::-->
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <div class="single-footer-widget footer_1">
+                        <a href="/index/{{ids}}"> <img src="/static/img/logo.png" style="width: 180px;" alt=""> </a>
+                        <p>But when shot real her. Chamber her one visite removal six
+                            sending himself boys scot exquisite existend an </p>
+                        <p>But when shot real her hamber her </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-4">
+                    <div class="single-footer-widget footer_2">
+                        <h4>Newsletter</h4>
+                        <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
+                        </p>
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Enter email address'
+                                        onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email address'">
+                                    <div class="input-group-append">
+                                        <button class="btn btn_1" type="button"><i class="ti-angle-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="social_icon">
+                            <a href="#"> <i class="ti-facebook"></i> </a>
+                            <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                            <a href="#"> <i class="ti-instagram"></i> </a>
+                            <a href="#"> <i class="ti-skype"></i> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-md-4">
+                    <div class="single-footer-widget footer_2">
+                        <h4>Contact us</h4>
+                        <div class="contact_info">
+                            <p><span> Address :</span> Hath of it fly signs bear be one blessed after </p>
+                            <p><span> Phone :</span> +2 36 265 (8060)</p>
+                            <p><span> Email : </span>info@colorlib.com </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="{{ url_for('static', filename='./js/jquery-1.12.1.min.js')}}"></script>
+    <!-- popper js -->
+    <script src="{{ url_for('static', filename='./js/popper.min.js')}}"></script>
+    <!-- bootstrap js -->
+    <script src="{{ url_for('static', filename='/js/bootstrap.min.js')}}"></script>
+    <!-- easing js -->
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js')}}"></script>
+    <!-- swiper js -->
+    <script src="{{ url_for('static', filename='js/swiper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.nice-select.min.js')}}"></script>
+    <!-- swiper js -->
+    <script src="{{ url_for('static', filename='js/masonry.pkgd.js')}}"></script>
+    <!-- particles js -->
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <!-- contact js -->
+    <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.form.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.validate.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/mail-script.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/contact.js')}}"></script>
+
+    <!-- slick js -->
+    <script src="{{ url_for('static', filename='js/slick.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+    <!-- custom js -->
+    <script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</body>
+
+</html>
+
+<script>
+
+
+    var youTubePlayer;
+
+    //var videoId = "#"
+    function setupPlayer() {
+        window.YT.ready(function () {
+            youTubePlayer = new YT.Player('YouTube-player',
+                {
+                    videoId: "dgsoPmN2tc0",
+                    events: {
+                        'onError': onError,
+                    }
+                });
+        });
+    }
+
+    var list_of_links;
+    var flag = 0;
+    function youTubePlayerChangeVideoId(ids) {
+        'use strict';
+        flag = 0;
+        var arr;
+        arr = ids.getAttribute("data-link-type")
+        arr = arr.split(",");
+        list_of_links = arr;
+        $('#modal1').modal({ backdrop: 'static', keyboard: false })
+
+        youTubePlayer.loadVideoById(arr[0])
+        youTubePlayer.playVideo();
+    }
+
+
+    function onError(event) {
+        if (event.data) {
+            flag += 1;
+            if (list_of_links.length > flag) {
+                youTubePlayer.loadVideoById(list_of_links[flag])
+                youTubePlayer.playVideo();
+                console.log(flag)
+            }
+        };
+    }
+
+
+    $(document).ready(function () {
+        setupPlayer()
+    });
+
+
+
+    $(document).ready(function () {
+        fetch(window.location.href + '/my_courses_data', {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify()
+        })
+            .then(response => response.json())
+            .then(function (data) {
+                xyz(data)
+            });
+    })
+
+
+function sorted_obj(GFG_Object){ 
+              
+              // Getting the keys of JavaScript Object. 
+              Modified_Object = Object.keys(GFG_Object)  
+                
+              // Sort and calling a method on 
+              // keys on sorted fashion. 
+              .sort().reduce(function(Obj, key) {  
+                        
+                  // Adding the key-value pair to the 
+                  // new object in sorted keys manner 
+                  Obj[key] = GFG_Object[key];  
+                  return Obj;  
+              }, {}); 
+            return Modified_Object
+}
+
+
+    function xyz(data) {
+        data = JSON.parse(data["courses"])
+        console.log(data)
+        if(data != 0){
+            data_sorted=sorted_obj(data["links"])
+        tem = ""
+        counter = 0
+        for(key in data_sorted) {
+            counter += 1
+            if (counter == 1) {
+                tem += '<div class="row align-items-sm-center align-items-lg-stretch">'
+            }
+            tem += '<div class="col-lg-4 col-md-6 mb-4">\
+                <div class="card shadow" style = "width: 100%;">\
+            <a onclick="youTubePlayerChangeVideoId(this)" data-link-type="'+data["links"][key]+'"><img class="img-fluid z-depth-1 card-img-top" src="https://i.ytimg.com/vi/'+data["links"][key].split(",")[0]+'/0.jpg" alt="xxxxx"\
+                        data-toggle="modal"></a>\
+            <div class="card-body">\
+                <div class="row d-flex justify-content-center align-item-center">\
+                <h6>'+key+'</h6>\
+            </div>\
+                    </div>\
+                </div >\
+              </div>'
+            if (counter % 3 == 0) {
+                tem += '</div>'
+                counter = 0
+            }
+
+        }
+        document.getElementById("course").innerHTML = tem
+    }else{
+        tem = ""
+        tem += '<div class="row ">\
+                <div class="col-lg-12 col-sm-12 d-flex justify-content-center">\
+                <img src="/static/img/payment2.png"><br>\
+                </div>\
+                </div>\
+                <div class="row mb-1 mt-2">\
+                <div class="col-lg-12 col-sm-12 d-flex justify-content-center">\
+                    <h3>Please Make Payment & Enjoy The Tutorials</h3>\
+                </div>\
+                </div>\
+                <div class="row mb-4">\
+                <div class="col-lg-12 col-sm-12 d-flex justify-content-center">\
+                    <h4>Contact:- 7798124887</h4>\
+                </div>\
+                </div>'
+        document.getElementById("course").innerHTML = tem
+    }
+    }
+
+
+</script>

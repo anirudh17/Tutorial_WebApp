@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Math Point</title>
+    <link rel="icon" href="{{ url_for('static', filename='./img/favicon.png')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css')}}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/animate.css')}}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/owl.carousel.min.css')}}">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/themify-icons.css')}}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/flaticon.css')}}">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/magnific-popup.css')}}">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/slick.css')}}">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css')}}">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    
+    
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu single_page_menu">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-12">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand logo_1" href="index.html"> <img src="{{ url_for('static', filename='img/single_page_logo.png')}}" style="width: 130px;" alt="logo"> </a>
+                    <a class="navbar-brand logo_2" href="index.html"> <img src="{{ url_for('static', filename='img/logo.png')}}" style="width: 130px;" alt="logo"> </a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse"
+                          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                          aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+
+                      <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                          id="navbarSupportedContent">
+                          <ul class="navbar-nav align-items-center">
+                              <li class="nav-item">
+                                  <a class="nav-link text-dark" href="index.html">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link text-dark" href="about.html">About</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link text-dark" href="cource.html">Courses</a>
+                              </li>
+                              
+                              <li class="d-none d-lg-block">
+                                  <a class="btn_1" href="/sign_in">Login</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    
+    <!-- breadcrumb start-->
+
+  <!-- ================ contact section start ================= -->
+  <section style="padding-top: 100px;">
+    <div class="container">
+    <div class="card border-0" style="height:550px;">
+      <div class="row h-100">
+        <div class="col-lg-7 d-flex justify-content-center align-items-center">
+          <img src="{{ url_for('static', filename='./img/register.jpg')}}" alt="">
+        </div>
+        <div class="col-lg-5 col-md-12 col-sm-12 p-3 px-5 card border-0 shadow-lg rounded">
+          <form method="POST" id="myForm1">
+
+            <div class="form-group">
+              <label for="std_name" class = "col-form-label col-form-label-sm"><h6>Student Name</h6></label>
+                <input type="text" class="form-control form-control-sm" id="std_name" name="std_name" placeholder="Student full name" required/>
+            </div>
+    
+            <div class="form-group">
+              <label for="select1" class="col-form-label col-form-label-sm"><h6>Course</h6></label>
+                <select class="form-control form-control-sm" id="select1" name="select1" required>
+                  <option>Choose Course</option> 
+                  <option value="B.sc Sem-I">B.sc Sem-I</option>
+                  <option value="B.sc Sem-II">B.sc Sem-II</option>
+                  <option value="B.sc Sem-III">B.sc Sem-III</option>
+                  <option value="B.sc Sem-IV">B.sc Sem-IV</option>
+                  <option value="B.sc Sem-V">B.sc Sem-V</option>
+                  <option value="B.sc Sem-VI">B.sc Sem-VI</option>
+                  <option disabled>---------------------------------------------------------------------------</option>
+                  <option value="IIT JAM">IIT JAM</option>
+                  <option disabled>---------------------------------------------------------------------------</option>
+                  <option value="Class 11">Class 11</option>
+                  <option value="Class 12">Class 12</option>
+                  <option disabled>---------------------------------------------------------------------------</option>
+                  <option value="IIT-JEE MAIN">IIT-JEE MAIN</option>
+                  <option value="IIT-JEE ADVANCE">IIT-JEE ADVANCE</option>
+                  <option disabled>---------------------------------------------------------------------------</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+              <label for="date" class="col-form-label col-form-label-sm"><h6>Date Of Birth</h6></label>
+                <input type="text" class="form-control form-control-sm" name="date" id="date" placeholder="YYYY-MM-DD" readonly required/>
+            </div>
+
+            <div class="form-group">
+              <label for="std_mob" class = "col-form-label col-form-label-sm"><h6>Mobile No.(Student)</h6></label>
+              <input type="tel" class="form-control form-control-sm" name="std_mob" placeholder="Student Contact Number (Ex. 8888888888)" id="std_mob" pattern="^[6-9]\d{9}$" maxlength="10"  title="Ten digits mobile no" required/>
+            </div>
+
+            <div class="form-group">
+              <label for="parant_mob" class = "col-form-label col-form-label-sm"><h6>Mobile No.(Parent)</h6></label>
+              <input type="tel" class="form-control form-control-sm" name="parant_mob" placeholder="Parent Contact Number (Ex. 8888888888)" id="parant_mob" pattern="^[6-9]\d{9}$" maxlength="10"  title="Ten digits mobile no" required/>
+            </div>
+
+            <div class="form-check ">
+              <input class="form-check-input" type="radio" name="options" id="male" value="Male" required/>
+              <label class="form-check-label form-check-label-sm" for="male"><h6>Male</h6></label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="options" id="female" value="female">
+              <label class="form-check-label form-check-label-sm" for="female"><h6>Female</h6></label>
+            </div>
+            <span class="d-flex justify-content-center"><h6 class="text-danger">{{data}}</h6></span>
+            
+            <span class="d-flex justify-content-center">
+            <button class="btn_1" style="padding-top: 5px;padding-bottom: 5px;" type="submit">Submit</button>
+              </span>
+          </form>
+          
+         
+          
+          
+          
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- ================ contact section end ================= -->
+
+<!-- footer part start-->
+
+<!-- footer part end-->
+
+<!-- jquery plugins here-->
+<!-- jquery -->
+<script src="{{ url_for('static', filename='./js/jquery-1.12.1.min.js')}}"></script>
+<!-- popper js -->
+<script src="{{ url_for('static', filename='./js/popper.min.js')}}"></script>
+<!-- bootstrap js -->
+<script src="{{ url_for('static', filename='/js/bootstrap.min.js')}}"></script>
+<!-- easing js -->
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.js')}}"></script>
+<!-- swiper js -->
+<script src="{{ url_for('static', filename='js/swiper.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.nice-select.min.js')}}"></script>
+<!-- swiper js -->
+<script src="{{ url_for('static', filename='js/masonry.pkgd.js')}}"></script>
+<!-- particles js -->
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+<!-- contact js -->
+<script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.form.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.validate.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/mail-script.js')}}"></script>
+<script src="{{ url_for('static', filename='js/contact.js')}}"></script>
+
+<!-- slick js -->
+<script src="{{ url_for('static', filename='js/slick.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+<!-- custom js -->
+<script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+</body>
+
+</html>
+{% block script %}
+<script>
+  
+  $('#date').datepicker({
+      uiLibrary: 'bootstrap4',format: 'yyyy-dd-mm'
+  });
+  
+/*
+  a = window.location.href.split("/")
+  a = a[a.length-1]
+  kk = "jfklsjklfs"
+  document.getElementById("myForm").action= "{{ url_for('register_post',ids="+kk+")}}"
+
+   */
+
+</script>
+
+{% endblock %}
